@@ -1,4 +1,5 @@
 package com.example.projekbutton;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 
@@ -33,7 +34,24 @@ public class MainActivity extends AppCompatActivity {
         bubahwarna = (Button) findViewById(R.id.btnubahwarna);
         btampilpesan = (Button) findViewById(R.id.btnpesan);
         ttampil= (TextView) findViewById(R.id.txttampil);
+
         //ini adalah perintah click untuk button pesan ubah warna
-        bubahwarna.setOnClickListener(new
+        bubahwarna.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                bubahwarna.setBackgroundColor(Color.RED);
+            }
+        });
+
+        //ini adalah perintah click untuk button pesat toast
+        btampilpesan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainActivity.this, "Hai Nando", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this, Home.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }
